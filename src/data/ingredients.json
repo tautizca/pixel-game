@@ -1,0 +1,19 @@
+[
+  { "id": "water", "name": "Water", "icon": "water.png", "color": "#4fc3f7", "abilities": ["hydrate", "extinguish"] },
+  { "id": "fire", "name": "Fire", "icon": "fire.png", "color": "#ff7043", "abilities": ["burn", "light"] },
+  { "id": "earth", "name": "Earth", "icon": "earth.png", "color": "#8d6e63", "abilities": ["grow", "block"] },
+  { "id": "air", "name": "Air", "icon": "air.png", "color": "#b3e5fc", "abilities": ["push", "lift"] },
+  { "id": "sand", "name": "Sand", "icon": "sand.png", "color": "#ffe082", "abilities": ["filter", "bury"] },
+  { "id": "metal", "name": "Metal", "icon": "metal.png", "color": "#b0bec5", "abilities": ["conduct", "block"] },
+  { "id": "salt", "name": "Salt", "icon": "salt.png", "color": "#e0e0e0", "abilities": ["preserve", "melt"] },
+  { "id": "oil", "name": "Oil", "icon": "oil.png", "color": "#6d4c41", "abilities": ["fuel", "float"] },
+  { "id": "glass", "name": "Glass", "icon": "glass.png", "color": "#b3e5fc", "abilities": ["transparent", "fragile"] },
+  { "id": "steam", "name": "Steam", "icon": "steam.png", "color": "#cfd8dc", "abilities": ["rise", "scald"] },
+  { "id": "mud", "name": "Mud", "icon": "mud.png", "color": "#a1887f", "abilities": ["stick", "build"] },
+  { "id": "energy", "name": "Energy", "icon": "energy.png", "color": "#ffd600", "abilities": ["shock", "power"] },
+  { "id": "clay", "name": "Clay", "icon": "clay.png", "color": "#bcaaa4", "abilities": ["shape", "harden"] },
+  { "id": "brick", "name": "Brick", "icon": "brick.png", "color": "#d84315", "abilities": ["build", "block"] },
+  { "id": "rust", "name": "Rust", "icon": "rust.png", "color": "#b71c1c", "abilities": ["weaken", "color"] },
+  { "id": "smoke", "name": "Smoke", "icon": "smoke.png", "color": "#757575", "abilities": ["obscure", "rise"] },
+  { "id": "ash", "name": "Ash", "icon": "ash.png", "color": "#bdbdbd", "abilities": ["fertilize", "cover"] }
+]

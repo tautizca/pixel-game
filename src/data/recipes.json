@@ -1,0 +1,20 @@
+[
+  { "ingredients": ["water", "earth"], "result": "mud", "abilities": ["stick", "build"] },
+  { "ingredients": ["fire", "air"], "result": "energy", "abilities": ["shock", "power"] },
+  { "ingredients": ["water", "fire"], "result": "steam", "abilities": ["rise", "scald"] },
+  { "ingredients": ["mud", "fire"], "result": "clay", "abilities": ["shape", "harden"] },
+  { "ingredients": ["clay", "fire"], "result": "brick", "abilities": ["build", "block"] },
+  { "ingredients": ["water", "salt"], "result": "salt", "abilities": ["preserve", "melt"] },
+  { "ingredients": ["sand", "fire"], "result": "glass", "abilities": ["transparent", "fragile"] },
+  { "ingredients": ["metal", "water"], "result": "rust", "abilities": ["weaken", "color"] },
+  { "ingredients": ["oil", "fire"], "result": "energy", "abilities": ["fuel", "power"] },
+  { "ingredients": ["wood", "fire"], "result": "ash", "abilities": ["fertilize", "cover"] },
+  { "ingredients": ["oil", "water"], "result": "oil", "abilities": ["float"] },
+  { "ingredients": ["fire", "earth"], "result": "brick", "abilities": ["build", "block"] },
+  { "ingredients": ["fire", "metal"], "result": "energy", "abilities": ["conduct", "power"] },
+  { "ingredients": ["fire", "smoke"], "result": "ash", "abilities": ["fertilize", "cover"] },
+  { "ingredients": ["water", "ash"], "result": "clay", "abilities": ["shape", "harden"] },
+  { "ingredients": ["air", "smoke"], "result": "smoke", "abilities": ["obscure", "rise"] },
+  { "ingredients": ["mud", "sand"], "result": "clay", "abilities": ["shape", "harden"] },
+  { "ingredients": ["sand", "water"], "result": "mud", "abilities": ["stick", "build"] }
+]
