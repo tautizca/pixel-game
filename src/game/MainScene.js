@@ -66,6 +66,24 @@ class MainScene extends Phaser.Scene {
 
 
   create() {
+    // ...existing code...
+    // Create isometric world
+    this.world = new World(this);
+    this.world.create();
+
+    // Highlight player tile (after world is created)
+    const playerTileInit = { ...this.playerStart };
+    const playerIsoInit = this.world.cartesianToScreen(playerTileInit.x, playerTileInit.y);
+    const w = this.world.tileWidth;
+    const h = this.world.tileHeight;
+    const playerTilePoints = [
+      { x: playerIsoInit.x, y: playerIsoInit.y - h / 2 },
+      { x: playerIsoInit.x + w / 2, y: playerIsoInit.y },
+      { x: playerIsoInit.x, y: playerIsoInit.y + h / 2 },
+      { x: playerIsoInit.x - w / 2, y: playerIsoInit.y }
+    ];
+    this.playerTileHighlight = this.add.polygon(0, 0, playerTilePoints.map(p => [p.x, p.y]).flat(), 0x00e676, 0.5)
+      .setOrigin(0, 0);
     // Custom movement keys
     this.keys = this.input.keyboard.addKeys({
       q: Phaser.Input.Keyboard.KeyCodes.Q,
@@ -117,6 +135,7 @@ class MainScene extends Phaser.Scene {
     this.playerTile = { ...this.playerStart };
     const playerIso = this.world.cartesianToScreen(this.playerTile.x, this.playerTile.y);
     this.player = new Player(this, playerIso.x, playerIso.y, 'player');
+    this.player.setDisplaySize(this.world.tileWidth, this.world.tileHeight);
     this.player.setTint(0x4fc3f7);
 
     // Input
@@ -141,6 +160,19 @@ class MainScene extends Phaser.Scene {
 
 
   update() {
+    // Move highlight to follow player
+    if (this.playerTileHighlight) {
+      const playerIsoHighlight = this.world.cartesianToScreen(this.playerTile.x, this.playerTile.y);
+      const w = this.world.tileWidth;
+      const h = this.world.tileHeight;
+      const points = [
+        { x: playerIsoHighlight.x, y: playerIsoHighlight.y - h / 2 },
+        { x: playerIsoHighlight.x + w / 2, y: playerIsoHighlight.y },
+        { x: playerIsoHighlight.x, y: playerIsoHighlight.y + h / 2 },
+        { x: playerIsoHighlight.x - w / 2, y: playerIsoHighlight.y }
+      ];
+      this.playerTileHighlight.setTo(points.map(p => [p.x, p.y]).flat());
+    }
     if (!this.player || !this.cursors || this.hasWon) return;
     // Convert player position to tile
     let px = Math.round((this.player.x - 400) / (this.world.tileWidth / 2) + (this.player.y - 200) / (this.world.tileHeight / 2)) / 2;
