@@ -1,5 +1,6 @@
 [
   { "ingredients": ["water", "earth"], "result": "mud", "abilities": ["stick", "build"] },
+  { "ingredients": ["earth", "air"], "result": "sand", "abilities": ["granular", "filter"] },
   { "ingredients": ["fire", "air"], "result": "energy", "abilities": ["shock", "power"] },
   { "ingredients": ["water", "fire"], "result": "steam", "abilities": ["rise", "scald"] },
   { "ingredients": ["mud", "fire"], "result": "clay", "abilities": ["shape", "harden"] },

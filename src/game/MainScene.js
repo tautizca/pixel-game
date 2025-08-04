@@ -206,11 +206,29 @@ class MainScene extends Phaser.Scene {
     this._wasS = this.keys.s.isDown || this.keys.num3.isDown;
     if (!moved) this.player.setVelocity(0, 0);
 
+    // Draw completed goals as isometric diamonds
+    for (const goal of this.goalTiles) {
+      const placed = this.placedElements.find(e => e.type === goal.type && e.x === goal.x && e.y === goal.y);
+      if (placed && !goal._drawn) {
+        const iso = this.world.cartesianToScreen(goal.x, goal.y);
+        const w = this.world.tileWidth;
+        const h = this.world.tileHeight;
+        const points = [
+          { x: iso.x, y: iso.y - h / 2 },
+          { x: iso.x + w / 2, y: iso.y },
+          { x: iso.x, y: iso.y + h / 2 },
+          { x: iso.x - w / 2, y: iso.y }
+        ];
+        this.add.polygon(0, 0, points.map(p => [p.x, p.y]).flat(), goal.type === 'energy' ? 0x00e676 : 0x90caf9, 1)
+          .setOrigin(0, 0).setAlpha(0.9);
+        goal._drawn = true;
+      }
+    }
     // Check win: all goals satisfied
     let allGoals = this.goalTiles.every(goal =>
       this.placedElements.find(e => e.type === goal.type && e.x === goal.x && e.y === goal.y)
     );
-    if (allGoals) {
+    if (allGoals && !this.hasWon) {
       this.hasWon = true;
       this.add.text(200, 100, 'You Win! All goals completed!', { font: '32px Arial', fill: '#00e676' }).setDepth(1000);
     }
